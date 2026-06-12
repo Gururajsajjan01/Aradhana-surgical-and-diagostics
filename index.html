@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aradhana Enterprises | Medical & Laboratory Supplies</title>
+  <meta name="description" content="Aradhana Enterprises supplies diagnostics reagents, rapid kits, laboratory glassware, surgical material, and medical equipment in Ilkal, Karnataka.">
+  <style>
+    :root {
+      --ink: #102033;
+      --muted: #5d6877;
+      --line: #d9e0ea;
+      --paper: #f7f9fc;
+      --white: #ffffff;
+      --red: #b91f2b;
+      --blue: #153a67;
+      --teal: #0f766e;
+      --gold: #d19a24;
+      --shadow: 0 18px 50px rgba(16, 32, 51, .14);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, .94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+    .brand-logo {
+      width: 48px;
+      height: 38px;
+      object-fit: contain;
+      background: white;
+      border-radius: 6px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .nav-actions { display: flex; gap: 10px; align-items: center; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 10px 15px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .btn svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    .btn.primary { background: var(--teal); border-color: var(--teal); color: white; }
+    .btn.blue { background: var(--blue); border-color: var(--blue); color: white; }
+    .btn.red { background: var(--red); border-color: var(--red); color: white; }
+
+    .hero {
+      background: linear-gradient(90deg, rgba(16, 32, 51, .92), rgba(16, 32, 51, .72)), url("assets/lab-products-new.jpg") center/cover no-repeat;
+      color: white;
+    }
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      min-height: 560px;
+      padding: 78px 20px 42px;
+      display: grid;
+      align-content: center;
+    }
+    .hero-content { width: min(720px, 100%); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffe6a8;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 650px;
+      color: #e9eff7;
+      font-size: 18px;
+    }
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .hero-strip {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 860px;
+    }
+    .stat {
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 8px;
+      padding: 14px;
+      background: rgba(255, 255, 255, .09);
+    }
+    .stat strong { display: block; font-size: 22px; }
+    .stat span { color: #d6dfeb; font-size: 13px; }
+
+    section {
+      padding: 72px 20px;
+    }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .category {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 150px;
+      box-shadow: 0 8px 24px rgba(16, 32, 51, .06);
+    }
+    .category .icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      background: #eef5f4;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .category h3 { margin: 0 0 8px; font-size: 18px; }
+    .category p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .products {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .product-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      box-shadow: 0 8px 22px rgba(16, 32, 51, .06);
+    }
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      background: white;
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .product-card .product-body {
+      min-height: 86px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .product-card h3 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+    .product-card button {
+      align-self: flex-start;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: var(--teal);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .catalog-card {
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 10px 26px rgba(16, 32, 51, .08);
+    }
+    .catalog-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #eef1f6;
+    }
+    .catalog-card.tall img { aspect-ratio: 16 / 11; object-fit: contain; padding: 8px; }
+    .catalog-card.portrait img { aspect-ratio: 4 / 5; object-fit: contain; padding: 8px; }
+    .catalog-card figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-top: 1px solid var(--line);
+      font-weight: 800;
+    }
+    .open-image {
+      border: 0;
+      background: transparent;
+      color: var(--teal);
+      font-weight: 800;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .contact {
+      background: #102033;
+      color: white;
+    }
+    .contact p { color: #d7e1ef; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .contact-panel {
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 8px;
+      padding: 22px;
+      background: rgba(255, 255, 255, .06);
+    }
+    .contact-panel h3 { margin: 0 0 12px; }
+    .detail {
+      display: flex;
+      gap: 10px;
+      align-items: start;
+      margin: 12px 0;
+      color: #edf4ff;
+      word-break: break-word;
+    }
+    .detail svg { width: 20px; height: 20px; color: #ffe6a8; flex: 0 0 auto; margin-top: 2px; }
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      color: var(--muted);
+      background: white;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+    .float-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 20;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #128c7e;
+      color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+    }
+    .float-whatsapp svg { width: 28px; height: 28px; }
+
+    dialog {
+      width: min(1120px, calc(100% - 28px));
+      padding: 0;
+      border: 0;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: white;
+    }
+    dialog::backdrop { background: rgba(16, 32, 51, .72); }
+    .modal-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      font-weight: 800;
+    }
+    .modal-bar button {
+      width: 38px;
+      height: 38px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: white;
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 1;
+    }
+    #modalImage { width: 100%; max-height: 82vh; object-fit: contain; background: #f3f6fa; }
+
+    @media (max-width: 920px) {
+      .nav-links { display: none; }
+      .hero-strip, .categories, .product-list, .catalog-grid, .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .nav { padding: 10px 14px; }
+      .brand span { max-width: 188px; white-space: normal; line-height: 1.05; }
+      .nav-actions .btn { min-width: 42px; padding: 10px; }
+      .nav-actions .btn span { display: none; }
+      .hero-inner { min-height: 590px; padding: 54px 16px 28px; }
+      .hero p { font-size: 16px; }
+      .hero-strip, .categories, .product-list, .catalog-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .section-head { display: block; }
+      .section-head p { margin-top: 10px; }
+      section { padding: 54px 16px; }
+      .catalog-card img { aspect-ratio: 4 / 3; }
+      .float-whatsapp { right: 14px; bottom: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Aradhana Enterprises home">
+        <img class="brand-logo" src="assets/aradhana-logo.jpg" alt="Aradhana Enterprises logo">
+        <span>Aradhana Enterprises</span>
+      </a>
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn" href="tel:+919964904543" title="Call Aradhana Enterprises">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.11 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.57 2.61a2 2 0 0 1-.45 2.11L8 9.67a16 16 0 0 0 6.33 6.33l1.23-1.23a2 2 0 0 1 2.11-.45c.84.25 1.71.45 2.61.57A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Call</span>
+        </a>
+        <a class="btn primary" href="https://wa.me/919964904543?text=Hello%20Aradhana%20Enterprises%2C%20I%20want%20product%20details." title="WhatsApp Aradhana Enterprises">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-12.4 7.35L3 20l1.2-5.43A8.38 8.38 0 1 1 21 11.5z"/><path d="M8.8 8.6c.2-.45.35-.45.6-.45h.45c.15 0 .35.05.5.35.18.35.6 1.45.65 1.55.05.12.08.25 0 .4-.32.62-.67.9-.5 1.2.6 1.05 1.42 1.88 2.55 2.45.3.15.48.12.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.75.82 2.05.98.3.15.5.22.58.35.08.13.08.75-.18 1.45-.25.7-1.45 1.35-2.02 1.4-.55.05-1.25.08-2.02-.12-.47-.15-1.08-.35-1.85-.68-3.25-1.4-5.37-4.65-5.55-4.88-.15-.22-1.32-1.75-1.32-3.35 0-1.6.82-2.4 1.12-2.72z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="eyebrow">Medical, surgical and laboratory supplies</div>
+          <h1>Aradhana Enterprises</h1>
+          <p>Dealers in diagnostics reagents, rapid kits, laboratory glassware, surgical material, hospital equipment, patient-care supports, and clinical instruments.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://wa.me/919964904543?text=Hello%20Aradhana%20Enterprises%2C%20please%20share%20availability%20and%20price%20details.">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-12.4 7.35L3 20l1.2-5.43A8.38 8.38 0 1 1 21 11.5z"/></svg>
+              Enquire on WhatsApp
+            </a>
+            <a class="btn red" href="mailto:ilkal.enterprises@gmail.com?subject=Product%20enquiry%20for%20Aradhana%20Enterprises">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+              Email
+            </a>
+            <a class="btn blue" href="#catalogue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>
+              View Catalogue
+            </a>
+          </div>
+          <img src="assets/aradhana-logo.jpg" alt="Aradhana Enterprises logo" style="width:min(360px, 100%); margin-top:28px; border-radius:8px; background:white; padding:10px;">
+          <div class="hero-strip" aria-label="Business highlights">
+          <div class="stat"><strong>9964904543</strong><span>Aradhana phone and WhatsApp</span></div>
+            <div class="stat"><strong>Ilkal</strong><span>Bagalkot, Karnataka</span></div>
+            <div class="stat"><strong>8 pages</strong><span>Product catalogue images</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Core Supply Categories</h2>
+          <p>Built from the supplied Aradhana Enterprises product catalogue and organized for quick scanning by clinics, labs, hospitals, and caregivers.</p>
+        </div>
+        <div class="categories">
+          <article class="category">
+            <div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 9a2 2 0 0 0 1.7 3h12.6A2 2 0 0 0 20 18l-5-9V3"/><path d="M8 3h8"/><path d="M7 14h10"/></svg></div>
+            <h3>Laboratory</h3>
+            <p>Glassware, test tubes, urine containers, strips, microscopes, and lab consumables.</p>
+          </article>
+          <article class="category">
+            <div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M2 12h20"/><path d="M7 7h10v10H7z"/></svg></div>
+            <h3>Diagnostics</h3>
+            <p>Rapid kits, reagents, glucometers, analyzers, and clinical testing supplies.</p>
+          </article>
+          <article class="category">
+            <div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10h10"/><path d="M12 5v10"/><path d="M5 20h14"/><path d="M8 20V8a4 4 0 0 1 8 0v12"/></svg></div>
+            <h3>Medical Equipment</h3>
+            <p>Monitors, oxygen concentrators, ECG machines, nebulisers, and ICU care items.</p>
+          </article>
+          <article class="category">
+            <div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 20V4"/><path d="M18 20V4"/><path d="M6 12h12"/><path d="M4 20h16"/></svg></div>
+            <h3>Patient Care</h3>
+            <p>Wheelchairs, walkers, commode chairs, braces, belts, beds, and supports.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="products">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Products Available</h2>
+          <p>Each product is shown with its own image. Select Open to view any product larger.</p>
+        </div>
+        <div class="product-list">
+          <article class="product-card"><img src="assets/products/hematology-analyzer.jpg" alt="Hematology Analyzer"><div class="product-body"><h3>Hematology Analyzer</h3><button class="open-image" data-image="assets/products/hematology-analyzer.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/biochemistry-analyzer.jpg" alt="Bio-Chemistry Analyzer"><div class="product-body"><h3>Bio-Chemistry Analyzer</h3><button class="open-image" data-image="assets/products/biochemistry-analyzer.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/clot-plain-tubes.jpg" alt="Clot and Plain Tubes"><div class="product-body"><h3>Clot / Plain Tubes</h3><button class="open-image" data-image="assets/products/clot-plain-tubes.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/edta-citrate-tubes.jpg" alt="EDTA and Citrate Tubes"><div class="product-body"><h3>EDTA / Citrate Tubes</h3><button class="open-image" data-image="assets/products/edta-citrate-tubes.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/test-tubes.jpg" alt="Test Tubes"><div class="product-body"><h3>Test Tubes</h3><button class="open-image" data-image="assets/products/test-tubes.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/hba1c-machine.jpg" alt="HBA1C Machine"><div class="product-body"><h3>HBA1C Machine</h3><button class="open-image" data-image="assets/products/hba1c-machine.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/glucometer.jpg" alt="Glucometer"><div class="product-body"><h3>Glucometer</h3><button class="open-image" data-image="assets/products/glucometer.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/hiv-rapid-kits.jpg" alt="HIV Rapid Kits"><div class="product-body"><h3>HIV Rapid Kits</h3><button class="open-image" data-image="assets/products/hiv-rapid-kits.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/rapid-kit.jpg" alt="Rapid Kit"><div class="product-body"><h3>Rapid Kit</h3><button class="open-image" data-image="assets/products/rapid-kit.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/microscope.jpg" alt="Microscope"><div class="product-body"><h3>Microscope</h3><button class="open-image" data-image="assets/products/microscope.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/urine-container.jpg" alt="Urine Container"><div class="product-body"><h3>Urine Container</h3><button class="open-image" data-image="assets/products/urine-container.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/urine-strips.jpg" alt="Urine Strips"><div class="product-body"><h3>Urine Strips</h3><button class="open-image" data-image="assets/products/urine-strips.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/malaria-rapid-kit.jpg" alt="Malaria Rapid Kit"><div class="product-body"><h3>Malaria Rapid Kit</h3><button class="open-image" data-image="assets/products/malaria-rapid-kit.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/glassware.jpg" alt="Laboratory Glassware"><div class="product-body"><h3>Laboratory Glassware</h3><button class="open-image" data-image="assets/products/glassware.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/monitor.jpg" alt="Monitor"><div class="product-body"><h3>Monitor</h3><button class="open-image" data-image="assets/products/monitor.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/iv-drip-monitor.jpg" alt="I.V. Drip Monitor"><div class="product-body"><h3>I.V. Drip Monitor</h3><button class="open-image" data-image="assets/products/iv-drip-monitor.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/icu-bed.jpg" alt="ICU Bed"><div class="product-body"><h3>ICU Bed</h3><button class="open-image" data-image="assets/products/icu-bed.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/bp-meter.jpg" alt="BP Meter"><div class="product-body"><h3>BP Meter</h3><button class="open-image" data-image="assets/products/bp-meter.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/instrument-trolley.jpg" alt="Instrument Trolley"><div class="product-body"><h3>Instrument Trolley</h3><button class="open-image" data-image="assets/products/instrument-trolley.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/oxygen-concentrator.jpg" alt="Oxygen Concentrator"><div class="product-body"><h3>Oxygen Concentrator</h3><button class="open-image" data-image="assets/products/oxygen-concentrator.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/surgical-instruments.jpg" alt="Surgical Instruments"><div class="product-body"><h3>Surgical Instruments</h3><button class="open-image" data-image="assets/products/surgical-instruments.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/nitrile-gloves.jpg" alt="Nitrile Gloves"><div class="product-body"><h3>Nitrile Gloves</h3><button class="open-image" data-image="assets/products/nitrile-gloves.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/surgical-gloves.jpg" alt="Surgical Gloves"><div class="product-body"><h3>Surgical Gloves</h3><button class="open-image" data-image="assets/products/surgical-gloves.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/examination-gloves.jpg" alt="Examination Gloves"><div class="product-body"><h3>Examination Gloves</h3><button class="open-image" data-image="assets/products/examination-gloves.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/wheel-chair.jpg" alt="Wheel Chair"><div class="product-body"><h3>Wheel Chair</h3><button class="open-image" data-image="assets/products/wheel-chair.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/folding-walker.jpg" alt="Folding Walker"><div class="product-body"><h3>Folding Walker</h3><button class="open-image" data-image="assets/products/folding-walker.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/commode-chair.jpg" alt="Commode Chair"><div class="product-body"><h3>Commode Chair</h3><button class="open-image" data-image="assets/products/commode-chair.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/commode-stool.jpg" alt="Commode Stool"><div class="product-body"><h3>Commode Stool</h3><button class="open-image" data-image="assets/products/commode-stool.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/walker-stick.jpg" alt="Walker Stick"><div class="product-body"><h3>Walker Stick</h3><button class="open-image" data-image="assets/products/walker-stick.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/bp-digital-monitor.jpg" alt="BP Digital Monitor"><div class="product-body"><h3>BP Digital Monitor</h3><button class="open-image" data-image="assets/products/bp-digital-monitor.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/ecg-machine.jpg" alt="ECG Machine"><div class="product-body"><h3>ECG Machine</h3><button class="open-image" data-image="assets/products/ecg-machine.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/nebuliser.jpg" alt="Nebuliser"><div class="product-body"><h3>Nebuliser</h3><button class="open-image" data-image="assets/products/nebuliser.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/digital-thermometer.jpg" alt="Digital Thermometer"><div class="product-body"><h3>Digital Thermometer</h3><button class="open-image" data-image="assets/products/digital-thermometer.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/stethoscope.jpg" alt="Stethoscope"><div class="product-body"><h3>Stethoscope</h3><button class="open-image" data-image="assets/products/stethoscope.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/thermometer.jpg" alt="Thermometer"><div class="product-body"><h3>Thermometer</h3><button class="open-image" data-image="assets/products/thermometer.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/dispovan-syringe.jpg" alt="Dispovan Syringe"><div class="product-body"><h3>Dispovan Syringe</h3><button class="open-image" data-image="assets/products/dispovan-syringe.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/rapid-kits-box.jpg" alt="Rapid Kits"><div class="product-body"><h3>Rapid Kits</h3><button class="open-image" data-image="assets/products/rapid-kits-box.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/urine-bag.jpg" alt="Urine Bag"><div class="product-body"><h3>Urine Bag</h3><button class="open-image" data-image="assets/products/urine-bag.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/urine-pot.jpg" alt="Urine Pot"><div class="product-body"><h3>Urine Pot</h3><button class="open-image" data-image="assets/products/urine-pot.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/iv-infusion-set.jpg" alt="I.V. Infusion Set"><div class="product-body"><h3>I.V. Infusion Set</h3><button class="open-image" data-image="assets/products/iv-infusion-set.jpg">Open</button></div></article>
+          <article class="product-card"><img src="assets/products/iv-stand.jpg" alt="I.V. Stand"><div class="product-body"><h3>I.V. Stand</h3><button class="open-image" data-image="assets/products/iv-stand.jpg">Open</button></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogue">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Product Catalogue Images</h2>
+          <p>All supplied catalogue pages are included. Select any page to view it larger.</p>
+        </div>
+        <div class="catalog-grid">
+          <figure class="catalog-card portrait">
+            <img src="assets/products-list-new.jpg" alt="Aradhana Enterprises available product categories list">
+            <figcaption>Product Overview <button class="open-image" data-image="assets/products-list-new.jpg">Open</button></figcaption>
+          </figure>
+          <figure class="catalog-card">
+            <img src="assets/lab-products-new.jpg" alt="Laboratory, rapid kit and analyzer catalogue products">
+            <figcaption>Lab, Kits and Analyzers <button class="open-image" data-image="assets/lab-products-new.jpg">Open</button></figcaption>
+          </figure>
+          <figure class="catalog-card">
+            <img src="assets/catalog-equipment-aids.jpg" alt="Hospital equipment and mobility aid catalogue products">
+            <figcaption>Equipment and Mobility <button class="open-image" data-image="assets/catalog-equipment-aids.jpg">Open</button></figcaption>
+          </figure>
+          <figure class="catalog-card">
+            <img src="assets/catalog-devices.jpg" alt="Diagnostic devices, instruments and accessories catalogue products">
+            <figcaption>Devices and Instruments <button class="open-image" data-image="assets/catalog-devices.jpg">Open</button></figcaption>
+          </figure>
+          <figure class="catalog-card tall">
+            <img src="assets/catalog-supports.jpg" alt="Braces, belts, supports and patient care catalogue products">
+            <figcaption>Supports and Braces <button class="open-image" data-image="assets/catalog-supports.jpg">Open</button></figcaption>
+          </figure>
+          <figure class="catalog-card tall">
+            <img src="assets/catalog-hospital-care.jpg" alt="Hospital bed, stretcher, doppler, and regulator catalogue products">
+            <figcaption>Hospital Care <button class="open-image" data-image="assets/catalog-hospital-care.jpg">Open</button></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Contact Aradhana Enterprises</h2>
+          <p>For product availability, pricing, delivery, and bulk requirements, contact directly by phone, WhatsApp, or email.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <h3>Business Details</h3>
+            <div class="detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.11 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.57 2.61a2 2 0 0 1-.45 2.11L8 9.67a16 16 0 0 0 6.33 6.33l1.23-1.23a2 2 0 0 1 2.11-.45c.84.25 1.71.45 2.61.57A2 2 0 0 1 22 16.92z"/></svg><span>9964904543</span></div>
+            <div class="detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg><span>ilkal.enterprises@gmail.com</span></div>
+            <div class="detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-13A7 7 0 0 0 5 9c0 6.8 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Ward No. 01, Joshi Galli, Near Panduranga Temple, Ilkal 587125, Bagalkot, Karnataka</span></div>
+            <div class="contact-actions">
+              <a class="btn primary" href="https://wa.me/919964904543?text=Hello%20Aradhana%20Enterprises%2C%20I%20want%20to%20enquire%20about%20medical%20products.">WhatsApp Now</a>
+              <a class="btn red" href="tel:+919964904543">Call 9964904543</a>
+              <a class="btn" href="mailto:ilkal.enterprises@gmail.com?subject=Product%20enquiry">Send Email</a>
+            </div>
+          </div>
+          <div class="contact-panel">
+            <h3>Aradhana Contact Page</h3>
+            <img src="assets/aradhana-only-contact.jpg" alt="Aradhana Enterprises contact details" style="border-radius:8px; width:100%; background:white;">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Aradhana Enterprises. Medical, surgical and laboratory supplies.</footer>
+
+  <a class="float-whatsapp" href="https://wa.me/919964904543?text=Hello%20Aradhana%20Enterprises%2C%20please%20share%20details." aria-label="WhatsApp Aradhana Enterprises">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-12.4 7.35L3 20l1.2-5.43A8.38 8.38 0 1 1 21 11.5z"/></svg>
+  </a>
+
+  <dialog id="imageDialog">
+    <div class="modal-bar">
+      <span>Catalogue Image</span>
+      <button type="button" id="closeDialog" aria-label="Close image">×</button>
+    </div>
+    <img id="modalImage" alt="Expanded catalogue page">
+  </dialog>
+
+  <script>
+    const dialog = document.getElementById('imageDialog');
+    const modalImage = document.getElementById('modalImage');
+    document.querySelectorAll('.open-image').forEach((button) => {
+      button.addEventListener('click', () => {
+        modalImage.src = button.dataset.image;
+        if (dialog.showModal) dialog.showModal();
+      });
+    });
+    document.getElementById('closeDialog').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      const rect = dialog.getBoundingClientRect();
+      const outside = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+      if (outside) dialog.close();
+    });
+  </script>
+</body>
+</html>
